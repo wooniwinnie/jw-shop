@@ -2,6 +2,11 @@
 module.exports = {
     content: ['./src/**/*.{html,js,jsx,ts,tsx}'],
     theme: {
+        screens: {
+            sm: { min: '320px', max: '768px' },
+            md: { min: '769px', max: '1023px' },
+            lg: { min: '1025px', max: '1200px' },
+        },
         extend: {
             gridTemplateColumns: {
                 24: 'repeat(24, minmax(0, 1fr))',

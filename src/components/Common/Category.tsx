@@ -55,7 +55,7 @@ const categoryNav = [
         category: [
             {
                 title: 'shirts',
-                link: '/shop/shirts',
+                link: '/shirts',
             },
             {
                 title: 'cardigan',

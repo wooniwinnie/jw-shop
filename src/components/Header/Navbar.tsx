@@ -7,12 +7,11 @@ import Category from '../Common/Category';
 type Props = {};
 
 export default function Navbar({}: Props) {
-    // const [clickedIndex, setClickedIndex] = useState<number | null>();
     const [showCategory, setShowCategory] = useState(false);
 
     const addCategory = (index: number) => {
         if (index === 2) {
-            setShowCategory(!false);
+            setShowCategory((showCategory) => !showCategory);
         }
     };
 
@@ -29,7 +28,9 @@ export default function Navbar({}: Props) {
                         className={item.style}
                         onClick={() => addCategory(index)}
                     >
-                        <Link to={item.link}>{item.title}</Link>
+                        <Link key={index} to={item.link}>
+                            {item.title}
+                        </Link>
                     </li>
                 ))}
             </ul>
@@ -44,7 +45,6 @@ export default function Navbar({}: Props) {
                     <BsFillCartFill />
                 </li>
             </ul>
-            {/* <Category /> */}
             {showCategory === true ? (
                 <Category removeCategory={removeCategory} />
             ) : null}
@@ -52,7 +52,7 @@ export default function Navbar({}: Props) {
         </nav>
     );
 }
-const navBarMenu = [
+export const navBarMenu = [
     {
         title: 'YMA SHOP',
         link: '/',
