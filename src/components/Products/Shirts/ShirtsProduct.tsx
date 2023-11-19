@@ -16,6 +16,7 @@ export default function ShirtsProduct({}: Props) {
         productImgUrl: '',
         productStock: '',
     });
+
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
         shirtsProduct.map((prod) => ({
