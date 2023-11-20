@@ -24,20 +24,21 @@ export default function ShirtsProducts({}: Props) {
         setShowAddForm(!showAddForm);
     };
     const [shirtsCard, setShirtsCard] = useState(shirtsList);
+    // any 타입 꼭 수정할 것!!
     const sendAddShirts = (addShirts: any) => {
         // 전달받은 데이터를 받아서 셔츠 리스트를 추가해줭
         setShirtsCard(addShirts);
     };
     return (
         <>
-            <div className='relative '>
-                <div className='flex justify-end px-24'>
+            <div className='mt-5 '>
+                <div className='px-2 text-xs'>
                     <button onClick={handleOnClick}>add product</button>
                 </div>
-                <div className='flex justify-between px-24 mt-12'>
+                <div className='flex flex-wrap justify-between w-full mt-5'>
                     {shirtsCard.map((card) => (
-                        <div key={card.id}>
-                            <div className=' w-96 h-96'>
+                        <div key={card.id} className='w-1/2 px-1 h-60'>
+                            <div className=' h-44'>
                                 <img
                                     className='w-full h-full'
                                     src={card.imageUrl}
@@ -45,10 +46,10 @@ export default function ShirtsProducts({}: Props) {
                                 />
                             </div>
                             <div>
-                                <ul>
-                                    <li>product name : {card.name}</li>
-                                    <li>price : {card.price}</li>
-                                    <li>rating : {card.rating}</li>
+                                <ul className='text-xs'>
+                                    <li>{card.name}</li>
+                                    <li>{card.price}</li>
+                                    <li>{card.rating}</li>
                                 </ul>
                             </div>
                         </div>

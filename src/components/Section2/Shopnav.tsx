@@ -8,17 +8,17 @@ type Props = {};
 
 export default function Shopnav({}: Props) {
     const [color, setColor] = useState(
-        'h-10 mt-10 rounded-md w-28 bg-neutral-500 text-white'
+        'text-xs h-6 rounded-md w-20 bg-neutral-500 text-white font-thin mt-4 my-8'
     );
 
     const btnColorChange = () => {
         setColor(
-            'h-10 mt-10  rounded-md w-28 bg-amber-600 transition-all text-white'
+            'h-6 mt-10 rounded-md w-20 w-28 bg-amber-600 transition-all text-white h-10'
         );
     };
 
     const btnColorBack = () => {
-        setColor('h-10 mt-10  rounded-md w-28 bg-stone-800 text-white');
+        setColor('text-xs sm:h-8 rounded-md w-20 bg-neutral-500 text-white');
     };
 
     const mainCard = [
@@ -60,23 +60,20 @@ export default function Shopnav({}: Props) {
         },
     ];
     return (
-        <div className='w-full h-full px-20 mt-10'>
+        <div className='mt-10'>
             {mainCard.map((item, index) => (
-                <div
-                    className='flex justify-between w-5/6 pt-10 m-auto'
-                    key={index}
-                >
-                    <div className='w-500 h-500 '>
+                <div className='' key={index}>
+                    <div className=''>
                         <img
-                            className='object-cover w-full h-full '
+                            className='sm:w-full sm:h-96'
                             src={item.url}
                             alt={item.alt}
                         />
                     </div>
-                    <div className='relative w-1/2'>
-                        <div className='absolute w-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'>
-                            <h1 className='text-3xl'>{item.title}</h1>
-                            <p>{item.text}</p>
+                    <div className='mt-10'>
+                        <div className='text-center '>
+                            <h1 className='sm:text-lg'>{item.title}</h1>
+                            <p className='py-8 sm:text-xs'>{item.text}</p>
                             <Btn
                                 className={color}
                                 url='/shirts'
@@ -89,18 +86,14 @@ export default function Shopnav({}: Props) {
                 </div>
             ))}
 
-            <div className='flex justify-between w-5/6 m-auto mt-10'>
+            <div className=''>
                 {subCard.map((sub, index) => (
-                    <div className='w-96 h-96' key={index}>
+                    <div className='' key={index}>
                         <Link to={sub.link}>
-                            <img
-                                className='object-cover w-full h-full'
-                                src={sub.url}
-                                alt={sub.alt}
-                            />
-                            <div className='flex items-center'>
+                            <img className='' src={sub.url} alt={sub.alt} />
+                            <div className='flex items-center sm:text-xs sm:py-2'>
                                 <p>{sub.text}</p>
-                                <span className='pl-2'>{sub.icon}</span>
+                                <span className=''>{sub.icon}</span>
                             </div>
                         </Link>
                     </div>

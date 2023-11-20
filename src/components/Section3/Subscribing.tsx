@@ -15,30 +15,25 @@ export default function Subscribing({}: Props) {
         setEmailText('');
     };
     return (
-        <form
-            className='w-full h-full px-48 mt-24 bg-orange-200'
-            onSubmit={handleSubmit}
-        >
-            <div className='flex items-center justify-between'>
-                <div className='text-lg '>
+        <form className='px-10 mt-10 sm:text-xs' onSubmit={handleSubmit}>
+            <div className=''>
+                <div className='text-center sm:text-sm '>
                     <p>stay updated with our latest news</p>
                 </div>
-                <div className='pt-4 '>
+                <div className='flex justify-between'>
                     <input
                         onChange={handleChange}
                         type='email'
                         value={emailText}
                         placeholder='your email'
-                        className='h-9 w-96'
+                        className='sm:w-full'
                     />
-                    <button className='w-24 text-white bg-zinc-500 h-9'>
-                        subscribe
-                    </button>
+                    <button className=''>subscribe</button>
 
                     {showText === true ? (
-                        <div className='flex items-center '>
-                            <span className='pr-2 text-white'>
-                                <BsCheckSquare className='bg-green-500 border-transparent ' />
+                        <div className=''>
+                            <span className=''>
+                                <BsCheckSquare className='' />
                             </span>
                             <p className='py-3 '>thanks for subscribing</p>
                         </div>

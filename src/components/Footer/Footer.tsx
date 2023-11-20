@@ -8,24 +8,24 @@ type Props = {};
 
 export default function Footer({}: Props) {
     return (
-        <footer className='text-white '>
-            <div className='bg-slate-800'>
-                <div className='flex items-center justify-between px-48 pt-12'>
-                    <div className='text-3xl'>
+        <footer className='py-1 mt-10 text-xs text-white bg-black '>
+            <div className=''>
+                <div className='flex items-center justify-between '>
+                    <div className=''>
                         <Link to='/home'>YMA SHOP</Link>
                     </div>
-                    <form className='flex text-2xl '>
+                    <form className='flex items-center '>
                         <select name='' id='' className='bg-transparent'>
                             <option value='krw'>KRW(₩)</option>
                             <option value='usd'>USD($)</option>
                             <option value='cny'>CNY(¥)</option>
                             <option value='jpy'>JPY(¥)</option>
                         </select>
-                        <div className='flex pl-8 text-2xl'>
+                        <div className='flex '>
                             {snsIcon.map((item, index) => (
                                 <Link
                                     key={index}
-                                    className='pl-8 '
+                                    className='px-1'
                                     to={item.url}
                                 >
                                     {item.icon}
@@ -34,23 +34,23 @@ export default function Footer({}: Props) {
                         </div>
                     </form>
                 </div>
-                <ul className='px-48 py-8 '>
+                <ul className='mt-4'>
                     {footerNav.map((item, index) => (
-                        <li key={index} className='py-2 '>
+                        <li key={index} className='py-1'>
                             <Link to={item.link}>{item.title}</Link>
                         </li>
                     ))}
                 </ul>
             </div>
-            <div className='flex items-center justify-between px-48 bg-black h-14'>
-                <ul className='flex'>
+            <div className='mt-2'>
+                <ul className='flex flex-col'>
                     {policyLink.map((item, index) => (
-                        <Link key={index} className='pr-8' to={item.url}>
+                        <Link key={index} className='py-1' to={item.url}>
                             {item.text}
                         </Link>
                     ))}
                 </ul>
-                <ul>
+                <ul className='mt-3 text-center'>
                     <li>
                         <Link to='/home'>&copy; YMA, You and Me inc </Link>
                     </li>

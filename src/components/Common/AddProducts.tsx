@@ -59,7 +59,7 @@ export default function AddProducts({ handleClose, sendAddShirts }: Props) {
                 return shirt;
             })
         );
-        console.log(addShirts);
+
         // setAddShirts((addShirts) =>
         //     addShirts.map((shirtsItem, index) => ({
         //         ...shirtsItem,
@@ -67,7 +67,7 @@ export default function AddProducts({ handleClose, sendAddShirts }: Props) {
         //     }))
         // );
     };
-    console.log(addShirts);
+
     return (
         <div className='absolute bg-white border top-40 w-500 h-96'>
             <form onSubmit={handleSubmit}>
